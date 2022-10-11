@@ -45,7 +45,7 @@ Verifique se o serviço do **Docker** esta em funcionamento:
 Para **baixar** e **criar** um container com a [imagem do MYSQL](https://hub.docker.com/_/mysql), usamos este comando:
 
 ```sh
-docker run -p 3306:3306 --name trybe_mysql -e MYSQL_ROOT_PASSWORD=sua_senha -d mysql:5.7
+docker run -p 3306:3306 --name mysql-container -e MYSQL_ROOT_PASSWORD=sua_senha -d mysql:5.7
 ```
 
 Atente que você pode seta a senha que preferir no lugar de "sua_senha". 
@@ -59,19 +59,19 @@ docker container ls
 Para **parar** a execução do nosso container, usamos este comando:
 
 ```
-docker container stop trybe_mysql
+docker container stop mysql-container
 ```
 
 Para **iniciar** novamente a execução do nosso container, usamos este comando:
 
 ```
-docker container start trybe_mysql
+docker container start mysql-container
 ```
 
 Caso precise **entrar no MYSQL via terminal**, usamos este comando:
 
 ```
-docker exec -it trybe_mysql bash
+docker exec -it mysql-container bash
 ```
 
 Após executar o comando anterior, seu terminal irá prover um *shell bash* dentro do container do MYSQL, agora basta usar este comando:
